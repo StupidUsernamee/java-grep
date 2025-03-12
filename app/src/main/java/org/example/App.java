@@ -5,6 +5,7 @@ import org.example.Utility.SearchResult;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class App {
@@ -21,7 +22,12 @@ public class App {
             System.out.println("file does not exist.");
             System.exit(0);
         }
-        String searchTerm = "rain";
+        String searchTerm = "";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Inter pattern: ");
+        searchTerm = scanner.nextLine();
+        System.out.println();
+        scanner.close();
 
         try (Stream<String> fileContent = InputReader.readFile(filePath)) {
             System.out.println("Search started.");

@@ -17,7 +17,7 @@ public class StringFinder {
 
     public static List<SearchResult> findString(Stream<String> fileContent, String pattern) {
 
-        searchAlgorithm = shouldUseKMP(pattern) ? new KMP() : new BoyerMoore(pattern);
+        searchAlgorithm = shouldUseKMP(pattern) ? new KMP(pattern) : new BoyerMoore(pattern);
 
         List<SearchResult> results = new ArrayList<>(5000); // Preallocate for efficiency
         final int[] lineNumber = {0};
