@@ -31,6 +31,5 @@ build
 
 # test files
 app/src/main/java/org/example/test_file
-
-# package for testing stuff
-app/src/main/
+app/src/main/java/huge_test_file.txt
+app/src/main/java/TestHub
