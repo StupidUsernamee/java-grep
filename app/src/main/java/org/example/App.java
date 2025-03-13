@@ -22,17 +22,17 @@ public class App {
             System.out.println("file does not exist.");
             System.exit(0);
         }
-        String searchTerm = "";
+        String pattern = "";
         Scanner scanner = new Scanner(System.in);
         System.out.print("Inter pattern: ");
-        searchTerm = scanner.nextLine();
+        pattern = scanner.nextLine();
         System.out.println();
         scanner.close();
 
         try (Stream<String> fileContent = InputReader.readFile(filePath)) {
             System.out.println("Search started.");
             long start = System.currentTimeMillis();
-            List<SearchResult> searchResultList = StringFinder.findString(fileContent ,searchTerm);
+            List<SearchResult> searchResultList = StringFinder.findString(fileContent ,pattern);
             long end = System.currentTimeMillis();
             System.out.println("Search finished.");
             long execTime = end - start;
